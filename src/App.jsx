@@ -1,7 +1,7 @@
-import Omdbapi from "./omdbapi/Omdbapi";
+import Api from "./api/Api";
 
 const App = () => {
-  return <Omdbapi />;
+  return <Api />;
 };
 
 export default App;
