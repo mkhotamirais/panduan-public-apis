@@ -22,8 +22,8 @@ import Omdbapi from "./pages/apis/omdbapi/Omdbapi.jsx";
 import OmdbapiHome from "./pages/apis/omdbapi/OmdbapiHome.jsx";
 import NewsapiHome from "./pages/apis/newsapi/NewsapiHome.jsx";
 import FakestoreapiHome from "./pages/apis/fakestoreapi/FakestoreapiHome.jsx";
-import Fakestoreapi from "./pages/apis/fakestoreapi/Fakestoreapi.jsx";
 import OmdbMovies from "./pages/apis/omdbapi/movie/OmdbMovies.jsx";
+import Fakestoreapi from "./pages/apis/fakestoreapi/Fakestoreapi.jsx";
 
 store.dispatch(getPosts());
 store.dispatch(getUsers());
