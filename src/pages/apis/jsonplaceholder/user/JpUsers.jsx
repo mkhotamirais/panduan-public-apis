@@ -1,6 +1,9 @@
 import { useSelector } from "react-redux";
 import JpUserCard from "./JpUserCard";
-import { CardGrid } from "../../../../components/Components";
+import { CardGrid, Title } from "../../../../components/Components";
+import { Link } from "react-router-dom";
+import { Btn } from "../../../../components/Tags";
+import { FaPlus } from "react-icons/fa";
 
 const JpUsers = () => {
   const { users, isLoading, isSuccess, isError, error } = useSelector((state) => state.jp);
@@ -13,7 +16,19 @@ const JpUsers = () => {
     content = <CardGrid>{renderedUsers}</CardGrid>;
   }
 
-  return <div>{content}</div>;
+  return (
+    <div>
+      <div className="flex items-center justify-between my-2">
+        <Title>Users List</Title>
+        <Link to="post">
+          <Btn className={"rounded-full text-sm"}>
+            <FaPlus />
+          </Btn>
+        </Link>
+      </div>
+      {content}
+    </div>
+  );
 };
 
 export default JpUsers;

@@ -2,12 +2,12 @@ import NavMenus from "../../../layouts/NavMenus";
 import { H1 } from "../../../components/Tags";
 import { Outlet } from "react-router-dom";
 import { Breadcrumb } from "../../../components/Components";
-const menus = ["news"];
+const menus = ["product"];
 
 const Newsapi = () => {
   return (
     <div>
-      <H1>Newsapi</H1>
+      <H1>Sisko</H1>
       <NavMenus menus={menus} />
       <Breadcrumb />
       <div className="my-2">

@@ -22,6 +22,11 @@ import Omdbapi from "./pages/apis/omdbapi/Omdbapi.jsx";
 import OmdbapiHome from "./pages/apis/omdbapi/OmdbapiHome.jsx";
 import NewsapiHome from "./pages/apis/newsapi/NewsapiHome.jsx";
 import OmdbMovies from "./pages/apis/omdbapi/movie/OmdbMovies.jsx";
+import JpUserPost from "./pages/apis/jsonplaceholder/user/JpUserPost.jsx";
+import Sisko from "./pages/apis/sisko/Sisko.jsx";
+import SiskoHome from "./pages/apis/sisko/SiskoHome.jsx";
+import Fakestore from "./pages/apis/fakestoreapi/Fakestore.jsx";
+import FakestoreHome from "./pages/apis/fakestoreapi/FakestoreHome.jsx";
 
 store.dispatch(getPosts());
 store.dispatch(getUsers());
@@ -41,6 +46,8 @@ const router = createBrowserRouter(
           </Route>
           <Route path="users">
             <Route index element={<JpUsers />} />
+            <Route path="post" element={<JpUserPost />} />
+            <Route path="update/:id" element={<JpPostUpdate />} />
             <Route path="detail/:id" element={<JpUserDetail />} />
           </Route>
         </Route>
@@ -50,6 +57,12 @@ const router = createBrowserRouter(
         <Route path="omdbapi" element={<Omdbapi />}>
           <Route index element={<OmdbapiHome />} />
           <Route path="movies" element={<OmdbMovies />} />
+        </Route>
+        <Route path="sisko" element={<Sisko />}>
+          <Route index element={<SiskoHome />} />
+        </Route>
+        <Route path="fakestoreapi" element={<Fakestore />}>
+          <Route index element={<FakestoreHome />} />
         </Route>
       </Route>
     </Route>

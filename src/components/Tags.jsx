@@ -35,6 +35,6 @@ export const Input = ({ type = "text", id, value, onChange, className }) => (
 Input.propTypes;
 
 export const Textarea = ({ id, value, onChange, className }) => (
-  <textarea id={id} name={id} value={value} onChange={onChange} className={`${className} border rounded w-full h-32`} />
+  <textarea id={id} name={id} value={value} onChange={onChange} className={`${className} border rounded w-full h-32 p-2`} />
 );
 Textarea.propTypes;

@@ -4,7 +4,7 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 import { setSidebarOpen } from "./app/features/layoutSlice";
 import { useDispatch } from "react-redux";
 
-const sidebarList = ["jsonplaceholder", "omdbapi", "newsapi"];
+const sidebarList = ["jsonplaceholder", "omdbapi", "newsapi", "sisko", "fakestoreapi"];
 
 const App = () => {
   const dispatch = useDispatch();
