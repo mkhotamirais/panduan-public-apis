@@ -5,7 +5,7 @@ const keys = {
 
 const url = {
   jsonplaceholderUrl: "https://jsonplaceholder.typicode.com",
-  omdbapiUrl: `http://www.omdbapi.com/?apikey=${keys.omdbapi}&`,
+  omdbapiUrl: `https://www.omdbapi.com/?apikey=${keys.omdbapi}&`,
 };
 
 export const { jsonplaceholderUrl: jpUrl, omdbapiUrl: omdbUrl } = url;
