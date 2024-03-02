@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Title } from "../../../../components/Components";
-import { Btn, Input, Label } from "../../../../components/Tags";
+import { Btn, Input, Label, Textarea } from "../../../../components/Tags";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getPosts, postPost } from "../../../../app/features/jsonplaceholder/jpSlice";
@@ -38,7 +38,7 @@ const JpPostPost = () => {
         </div>
         <div className="mb-2">
           <Label id="content">content</Label>
-          <Input id="content" value={content} onChange={(e) => setContent(e.target.value)} />
+          <Textarea id="content" value={content} onChange={(e) => setContent(e.target.value)} />
         </div>
         <Btn type="submit" disabled={!canSave} className={"w-full sm:w-auto sm:px-8 py-3 mt-2"}>
           Post

@@ -25,7 +25,9 @@ const Header = () => {
         <Logo />
       </nav>
       <div className="flex gap-2 items-center">
-        <BsGithub className="text-xl cursor-pointer hover:opacity-60" />
+        <a href="https://github.com/mkhotamirais/public-apis" target="_black" rel="noopener noreferer">
+          <BsGithub className="text-xl cursor-pointer hover:opacity-60" />
+        </a>
         {/* <div className="block sm:hidden">
           {isSidebarOpen ? <HiX className="text-2xl" /> : <HiMenu className="text-2xl" />}
         </div> */}

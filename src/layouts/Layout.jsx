@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
-import FooterCom from "./FooterCom";
+import Footer from "./Footer";
 
 const Layout = () => {
   return (
@@ -9,7 +9,7 @@ const Layout = () => {
       <main className="min-h-screen px-3 lg:px-16">
         <Outlet />
       </main>
-      <FooterCom />
+      <Footer />
     </>
   );
 };

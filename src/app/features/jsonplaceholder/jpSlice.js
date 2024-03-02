@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { jpUrl } from "../../../config/constants";
+import { jpUrl } from "../../../../config/constants";
 
 export const getPosts = createAsyncThunk("jp/getPosts", async (_, { rejectWithValue }) => {
   try {
@@ -13,7 +13,16 @@ export const getPosts = createAsyncThunk("jp/getPosts", async (_, { rejectWithVa
 
 export const postPost = createAsyncThunk("jp/postPost", async (data, { rejectWithValue }) => {
   try {
-    const res = await axios.get(`${jpUrl}/posts`, data);
+    const res = await axios.post(`${jpUrl}/posts`, data);
+    return res.data;
+  } catch (error) {
+    return rejectWithValue(error?.response?.message || error?.message);
+  }
+});
+
+export const updatePost = createAsyncThunk("jp/updatePost", async (data, { rejectWithValue }) => {
+  try {
+    const res = await axios.patch(`${jpUrl}/posts/${data.id}`, data);
     return res.data;
   } catch (error) {
     return rejectWithValue(error?.response?.message || error?.message);
@@ -84,6 +93,18 @@ const jpSlice = createSlice({
         state.isSuccess = true;
       })
       .addCase(postPost.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.error = action.payload;
+      })
+      .addCase(updatePost.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(updatePost.fulfilled, (state) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+      })
+      .addCase(updatePost.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.error = action.payload;
