@@ -27,6 +27,9 @@ import Sisko from "./pages/apis/sisko/Sisko.jsx";
 import SiskoHome from "./pages/apis/sisko/SiskoHome.jsx";
 import Fakestore from "./pages/apis/fakestoreapi/Fakestore.jsx";
 import FakestoreHome from "./pages/apis/fakestoreapi/FakestoreHome.jsx";
+import NewsapiNews from "./pages/apis/newsapi/news/NewsapiNews.jsx";
+import FkstoreProduct from "./pages/apis/fakestoreapi/product/FkstoreProduct.jsx";
+import SiskoProducts from "./pages/apis/sisko/product/SiskoProducts.jsx";
 
 store.dispatch(getPosts());
 store.dispatch(getUsers());
@@ -53,6 +56,7 @@ const router = createBrowserRouter(
         </Route>
         <Route path="newsapi" element={<Newsapi />}>
           <Route index element={<NewsapiHome />} />
+          <Route path="news" element={<NewsapiNews />} />
         </Route>
         <Route path="omdbapi" element={<Omdbapi />}>
           <Route index element={<OmdbapiHome />} />
@@ -60,9 +64,11 @@ const router = createBrowserRouter(
         </Route>
         <Route path="sisko" element={<Sisko />}>
           <Route index element={<SiskoHome />} />
+          <Route path="product" element={<SiskoProducts />} />
         </Route>
         <Route path="fakestoreapi" element={<Fakestore />}>
           <Route index element={<FakestoreHome />} />
+          <Route path="product" element={<FkstoreProduct />} />
         </Route>
       </Route>
     </Route>

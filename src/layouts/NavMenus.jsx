@@ -9,7 +9,6 @@ const NavMenus = ({ menus }) => {
   const path = location.pathname.split("/");
 
   useEffect(() => {
-    setActive(JSON.parse(localStorage.getItem("activeTab")));
     setActive(path[2]);
   }, [path]);
 
