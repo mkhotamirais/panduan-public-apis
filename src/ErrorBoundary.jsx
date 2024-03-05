@@ -15,7 +15,7 @@ const ErrorBoundary = () => {
       content = <div>🫖</div>;
     } else content = <div>Something went wrong</div>;
   }
-  return content;
+  return <div className="flex items-center justify-center h-screen text-3xl italic">{content}</div>;
 };
 
 export default ErrorBoundary;
